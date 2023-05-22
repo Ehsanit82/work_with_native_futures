@@ -60,6 +60,7 @@ class _ImageInputState extends State<ImageInput> {
             width: 200,
             height: 200,
             decoration: BoxDecoration(
+              color:  Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(30),
               border: Border.all(
                 width: 1,

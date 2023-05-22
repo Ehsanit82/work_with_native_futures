@@ -16,87 +16,71 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        backgroundColor: Theme
-            .of(context)
-            .primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
         appBar: AppBar(
           elevation: 0,
           title: Text(
             'افزودن مکان جدید',
-            style: Theme
-                .of(context)
-                .textTheme
-                .titleLarge,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
-          backgroundColor: Theme
-              .of(context)
-              .primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
           foregroundColor: Colors.white,
         ),
         body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-        Expanded(
-        child: SingleChildScrollView(
-        child: Padding(
-            padding: const EdgeInsets.all(10.0),
-        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-          TextField(
-          controller: _titleController,
-          decoration: InputDecoration(
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(40),
-              borderSide:
-              BorderSide(color: Theme
-                  .of(context)
-                  .cardColor),
+            Expanded(
+              child: SingleChildScrollView(
+                  child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                    TextField(
+                      controller: _titleController,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor:  Theme.of(context).cardColor,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide:
+                              BorderSide(color: Theme.of(context).cardColor),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: BorderSide(
+                            color: Theme.of(context).cardColor,
+                          ),
+                        ),
+                        hintText: 'موضوع',
+                        hintStyle: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    ImageInput(),
+                  ],
+                ),
+              )),
             ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(40),
-              borderSide: BorderSide(
-                color: Theme
-                    .of(context)
-                    .cardColor,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).cardColor,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'افزودن مکان ',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  Icon(Icons.add),
+                ],
               ),
-            ),
-            labelText: 'موضوع',
-            labelStyle: Theme
-                .of(context)
-                .textTheme
-                .titleMedium,
-          ),
-          style: Theme
-              .of(context)
-              .textTheme
-              .titleLarge,
+            )
+          ],
         ),
-        ImageInput(),
-        ],
       ),
-    )),
-    ),
-    ElevatedButton(
-    style: ElevatedButton.styleFrom(
-    backgroundColor: Theme.of(context).cardColor,
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-    onPressed: () {},
-    child: Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    Text(
-    'افزودن مکان ',
-    style: Theme.of(context).textTheme.titleLarge,
-    ),
-    Icon(Icons.add),
-    ],
-    ),
-    )
-    ],
-    ),
-    )
-    ,
     );
   }
 }
