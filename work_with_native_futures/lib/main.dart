@@ -8,8 +8,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Plces',
       theme: ThemeData(
-          primaryColor: const Color.fromARGB(255, 23, 0, 80),
-          canvasColor: Colors.white),
+          primaryColor: const Color(0xff1d3557),
+          backgroundColor: const Color(0xffa8dadc)),
     );
   }
 }
