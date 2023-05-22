@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Theme.of(context).primaryColor,
         ),
         body: Text(
-          'hello',
+          'hello',style: TextStyle(color: Theme.of(context).primaryColor),
         ),
       ),
     );
