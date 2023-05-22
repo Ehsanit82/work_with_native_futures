@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/work_with_native_futures/work_with_native_futures.iml" filepath="$PROJECT_DIR$/work_with_native_futures/work_with_native_futures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/work_with_native_futures/android/work_with_native_futures_android.iml" filepath="$PROJECT_DIR$/work_with_native_futures/android/work_with_native_futures_android.iml" />
+    </modules>
+  </component>
+</project>
