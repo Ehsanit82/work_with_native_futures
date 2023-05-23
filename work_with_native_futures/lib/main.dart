@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Great Places',
         theme: ThemeData(
-          primaryColor: const Color(0xff1d3557),
+          primaryColor: const Color(0xff0b1437),
             cardColor: const Color(0xff4a5d78),
           textTheme: const TextTheme(
             titleLarge: TextStyle(
