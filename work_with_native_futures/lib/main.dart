@@ -4,10 +4,9 @@ import 'package:work_with_native_futures/screens/add_place_screen.dart';
 import './providers/great_places.dart';
 import './screens/places_list_screen.dart';
 
-void main() => runApp( MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -15,24 +14,21 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Great Places',
         theme: ThemeData(
-          primaryColor: const Color(0xff0b1437),
+            primaryColor: const Color(0xff0b1437),
             cardColor: const Color(0xff4a5d78),
-          textTheme: const TextTheme(
-            titleLarge: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontFamily: 'IranSans'
+            iconTheme: IconThemeData(
+              color: const Color(0xff4a5d78),
             ),
-              titleMedium: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontFamily: 'IranSans'
-              )
-          )
-        ),
-        home:  const PlacesListScreen(),
+            textTheme: const TextTheme(
+                titleLarge: TextStyle(
+                    color: Colors.white, fontSize: 18, fontFamily: 'IranSans'),
+                titleMedium: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontFamily: 'IranSans'))),
+        home: const PlacesListScreen(),
         routes: {
-          AddPlaceScreen.routeName:(ctx)=> AddPlaceScreen(),
+          AddPlaceScreen.routeName: (ctx) => AddPlaceScreen(),
         },
       ),
     );
