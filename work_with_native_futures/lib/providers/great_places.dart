@@ -20,5 +20,6 @@ class GreatPlaces with ChangeNotifier {
         location: null,
       ),
     );
+    notifyListeners();
   }
 }

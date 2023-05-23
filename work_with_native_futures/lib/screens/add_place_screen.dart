@@ -1,28 +1,38 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:work_with_native_futures/widgets/image_input.dart';
+import 'package:provider/provider.dart';
 
-class AddPlaceScreen extends StatelessWidget {
+import '../providers/great_places.dart';
+import '../widgets/image_input.dart';
+
+class AddPlaceScreen extends StatefulWidget {
   static const String routeName = '/add_place';
 
+  @override
+  State<AddPlaceScreen> createState() => _AddPlaceScreenState();
+}
+
+class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
+
   File _pickedImage;
 
   void _selectedImage(File image) {
     _pickedImage=image;
   }
 
-
-
   void addPlace(){
+    final place = Provider.of<GreatPlaces>(context);
     if(_titleController.text.isEmpty || _pickedImage==null){
       return;
     }
+    place.addPlace(_titleController.text, _pickedImage);
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:work_with_native_futures/screens/add_place_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:work_with_native_futures/widgets/place_item.dart';
+
+import '../providers/great_places.dart';
+import '../screens/add_place_screen.dart';
+import '../widgets/image_input.dart';
 
 class PlacesListScreen extends StatelessWidget {
   const PlacesListScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final place = Provider.of<GreatPlaces>(context, listen: false).items;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -22,7 +28,17 @@ class PlacesListScreen extends StatelessWidget {
           ],
           foregroundColor: Colors.white,
           backgroundColor: Theme.of(context).primaryColor,
-          title:  Text('مکان های شما',style:  Theme.of(context).textTheme.titleLarge,),
+          title: Text(
+            'مکان های شما',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+        ),
+        body: ListView.builder(
+          itemCount: place.length,
+          itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+            value: place[i],
+            child: PlaceItem(),
+          ),
         ),
       ),
     );
