@@ -23,11 +23,12 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   }
 
   void addPlace(){
-    final place = Provider.of<GreatPlaces>(context);
+    final place = Provider.of<GreatPlaces>(context,listen: false);
     if(_titleController.text.isEmpty || _pickedImage==null){
       return;
     }
     place.addPlace(_titleController.text, _pickedImage);
+    Navigator.pop(context);
   }
 
   @override
@@ -87,7 +88,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
               style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).cardColor,
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-              onPressed: () {},
+              onPressed: addPlace,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

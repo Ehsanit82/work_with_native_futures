@@ -11,7 +11,7 @@ class PlacesListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final place = Provider.of<GreatPlaces>(context, listen: false).items;
+    final place = Provider.of<GreatPlaces>(context).items;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
